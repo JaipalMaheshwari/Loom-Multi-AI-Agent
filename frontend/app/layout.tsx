@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Serif_4, Inter } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const serif = Source_Serif_4({
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${serif.variable} ${sans.variable} font-sans antialiased`}>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
