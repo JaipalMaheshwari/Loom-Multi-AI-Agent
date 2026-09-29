@@ -1,0 +1,6 @@
+backend/.env
+backend/agent.db
+node_modules
+frontend/.next
+frontend/.env.local
+backend/venv
