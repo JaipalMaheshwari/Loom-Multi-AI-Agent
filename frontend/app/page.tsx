@@ -161,7 +161,7 @@ export default function Home() {
 
       <section className="flex min-w-0 flex-1 flex-col">
         <div ref={scrollRef} className="flex-1 overflow-y-auto">
-          <div className="mx-auto flex min-h-full max-w-[720px] flex-col justify-end gap-5 px-6 py-8">
+          <div className="mx-auto flex min-h-full max-w-[720px] flex-col justify-end gap-5 px-4 py-6 sm:px-6 sm:py-8">
             {messages.length === 0 && (
               <div className="flex flex-1 flex-col items-center justify-center gap-3 pb-16 text-center">
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-soft text-accent">

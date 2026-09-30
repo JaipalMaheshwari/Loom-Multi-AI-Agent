@@ -37,7 +37,7 @@ export default function MessageBubble({ message }: { message: Message }) {
           </div>
         )}
         <div className="flex justify-end">
-          <div className="max-w-[75%] rounded-2xl rounded-br-md bg-bubble px-4 py-2.5 text-[15px] leading-relaxed text-ink">
+          <div className="max-w-[88%] rounded-[22px] rounded-br-md bg-bubble px-4 py-2.5 text-[15px] font-normal leading-relaxed text-ink sm:max-w-[75%]">
             {visibleText}
           </div>
         </div>
