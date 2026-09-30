@@ -29,14 +29,14 @@ export default function MessageBubble({ message }: { message: Message }) {
   if (isUser) {
     const { visibleText, filename, isImage } = splitAttachment(message.content);
     return (
-      <div className="flex flex-col items-end gap-1.5">
+      <div className="flex w-full flex-col items-end gap-1.5">
         {filename && (
           <div className="flex items-center gap-1.5 rounded-lg border border-border bg-white/60 px-2.5 py-1.5 text-xs text-ink-soft">
             {isImage ? <ImageIcon size={13} /> : <FileText size={13} />}
             <span className="max-w-[220px] truncate">{filename}</span>
           </div>
         )}
-        <div className="flex justify-end">
+        <div className="flex w-full justify-end">
           <div className="max-w-[88%] rounded-[22px] rounded-br-md bg-bubble px-4 py-2.5 text-[15px] font-normal leading-relaxed text-ink sm:max-w-[75%]">
             {visibleText}
           </div>
