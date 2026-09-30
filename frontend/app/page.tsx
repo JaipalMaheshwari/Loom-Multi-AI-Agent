@@ -136,7 +136,7 @@ export default function Home() {
   }
 
   return (
-    <main className="flex h-screen bg-cream">
+    <main className="flex h-dvh bg-cream">
       <Sidebar
         conversations={conversations}
         activeId={activeId}
