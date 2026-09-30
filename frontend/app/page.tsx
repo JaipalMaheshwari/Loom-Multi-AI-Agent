@@ -26,6 +26,12 @@ export default function Home() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
+  // Mobile (< 768px) par sidebar default band rakhte hain, warna chat area
+  // ke liye jagah hi nahi bachti. Desktop par khuli rehti hai jaisa pehle thi.
+  useEffect(() => {
+    if (window.innerWidth < 768) setSidebarOpen(false);
+  }, []);
+
   useEffect(() => {
     api.listConversations().then(setConversations).catch(() => {});
     api.getModelsStatus().then(setModelStatus).catch(() => {});
@@ -51,11 +57,21 @@ export default function Home() {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, sending]);
 
+  function closeSidebarOnMobile() {
+    if (window.innerWidth < 768) setSidebarOpen(false);
+  }
+
+  function handleSelectConversation(id: number) {
+    setActiveId(id);
+    closeSidebarOnMobile();
+  }
+
   function handleNewChat() {
     setActiveId(null);
     setMessages([]);
     setErrorMsg(null);
     setSelectedAgentId("general");
+    closeSidebarOnMobile();
   }
 
   async function handleRename(id: number, title: string) {
@@ -124,7 +140,7 @@ export default function Home() {
       <Sidebar
         conversations={conversations}
         activeId={activeId}
-        onSelect={setActiveId}
+        onSelect={handleSelectConversation}
         onNewChat={handleNewChat}
         onRename={handleRename}
         onDelete={handleDelete}

@@ -49,7 +49,7 @@ export default function AgentPicker({
       </button>
 
       {open && (
-        <div className="absolute bottom-[calc(100%+6px)] left-0 z-20 w-72 rounded-xl border border-border bg-white shadow-panel">
+        <div className="absolute bottom-[calc(100%+6px)] left-0 z-20 w-72 max-w-[calc(100vw-2rem)] rounded-xl border border-border bg-white shadow-panel">
           <div className="flex items-center gap-2 border-b border-border px-3 py-2">
             <Search size={14} className="text-muted" />
             <input
